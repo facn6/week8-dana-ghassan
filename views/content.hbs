@@ -1,0 +1,10 @@
+{{> header}}
+
+<h1 class="">Capitals</h1>
+<ul id="list">
+    {{#each countryData }}
+    {{#if this.city}}
+    <li> {{this.country}} : {{this.city}} </li>
+    {{/if}}
+    {{/each}}
+</ul>

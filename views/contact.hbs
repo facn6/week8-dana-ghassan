@@ -1,0 +1,10 @@
+{{> header}}
+
+<h1 class="countries">Population</h1>
+<ul id="list">
+    {{#each countryData }}
+    {{#if this.population}}
+    <li> {{this.country}} : {{this.population}} </li>
+    {{/if}}
+    {{/each}}
+</ul>
