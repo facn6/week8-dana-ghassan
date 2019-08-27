@@ -19,7 +19,12 @@ app.engine(
 app.use(express.static(path.join(__dirname, "..", "public")));
 
 app.get("/", (req, res) => {
-  res.render("home", { });
+  res.render("home", {});
 });
-
+app.get("/contact", (req, res) => {
+  res.render("contact", {});
+});
+app.get("/content", (req, res) => {
+  res.render("content", {});
+});
 module.exports = app;
