@@ -2,6 +2,33 @@ body {
   font-family: Roboto;
 }
 
+header {
+  background: rgba(139, 0, 0, 0.76);
+  color: white;
+  display: flex;
+  text-align: right;
+  margin: 5px 5px;
+  box-shadow: 1px 2px 4px rgba(0, 0, 0, 0.5);
+}
+
+header a {
+  color: white;
+  text-decoration: none;
+  padding: 15px 40px;
+  border-bottom: 5px rgba(139, 0, 0, 0.76) outset;
+}
+
+header a:hover {
+  color: wheat;
+  border-bottom: 5px wheat solid;
+}
+
+.title {
+  text-align: center;
+  margin: 20px 20px;
+  color: darkred;
+}
+
 .contact {
   display: flex;
   flex-direction: column;
