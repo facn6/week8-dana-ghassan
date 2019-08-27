@@ -32,11 +32,20 @@ header a:hover {
 .contact {
   display: flex;
   flex-direction: column;
-  background: grey;
+  text-align: center;
+}
+
+.right-dir{
+  margin-left:5%;
+}
+
+.left-dir{
+  margin-right:5%;
 }
 
 .contact input {
   border-bottom: 3px darkred solid;
-  padding: 20px 20px;
+  padding: 10px 10px;
   margin: 10px 10px;
+
 }
