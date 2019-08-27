@@ -18,10 +18,13 @@
   },
   "homepage": "https://github.com/facn6/week8-dana-ghassan#readme",
   "dependencies": {
+    "env2": "^2.2.2",
     "express": "^4.17.1",
     "express-handlebars": "^3.1.0",
     "handlebars-form-helpers": "^0.1.4",
     "hbs": "^4.0.4",
-    "nodemon": "^1.19.1"
-  }
+    "nodemon": "^1.19.1",
+    "pg": "^7.12.1"
+  },
+  "devDependencies": {}
 }
