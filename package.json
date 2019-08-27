@@ -24,7 +24,8 @@
     "handlebars-form-helpers": "^0.1.4",
     "hbs": "^4.0.4",
     "nodemon": "^1.19.1",
-    "pg": "^7.12.1"
+    "pg": "^7.12.1",
+    "serve-favicon": "^2.5.0"
   },
   "devDependencies": {}
 }

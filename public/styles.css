@@ -1,12 +1,13 @@
-body {
-  font-family: Roboto;
-}
-
 header {
-  background: rgba(139, 0, 0, 0.76);
+  background: linear-gradient(
+    rgb(105, 8, 8),
+    rgba(139, 0, 0, 0.76),
+    rgba(149, 8, 8, 0.555)
+  );
   color: white;
   display: flex;
-  text-align: right;
+  flex-direction: row;
+  justify-content: space-between;
   margin: 5px 5px;
   box-shadow: 1px 2px 4px rgba(0, 0, 0, 0.5);
 }
@@ -14,8 +15,10 @@ header {
 header a {
   color: white;
   text-decoration: none;
-  padding: 15px 40px;
+  padding: 10px 40px;
   border-bottom: 5px rgba(139, 0, 0, 0.76) outset;
+  border-left: transparent solid 3px;
+  border-right: transparent solid 3px;
 }
 
 header a:hover {
@@ -24,8 +27,11 @@ header a:hover {
 }
 
 .title {
+  font-family: "Trebuchet MS", "Lucida Sans Unicode", "Lucida Grande",
+    "Lucida Sans", Arial, sans-serif;
   text-align: center;
   margin: 20px 20px;
+  padding: 20px 20px;
   color: darkred;
 }
 
@@ -33,19 +39,39 @@ header a:hover {
   display: flex;
   flex-direction: column;
   text-align: center;
-}
-
-.right-dir{
-  margin-left:5%;
-}
-
-.left-dir{
-  margin-right:5%;
+  align-items: center;
 }
 
 .contact input {
+  border: white;
   border-bottom: 3px darkred solid;
   padding: 10px 10px;
   margin: 10px 10px;
+  width: 50%;
+  box-shadow: 1px 2px 4px rgba(0, 0, 0, 0.5);
+}
 
+#submit-button {
+  font-family: "Trebuchet MS", "Lucida Sans Unicode", "Lucida Grande",
+    "Lucida Sans", Arial, sans-serif;
+  border-radius: 10%;
+  padding: 10px 20px;
+  margin: 20px 20px;
+  background: linear-gradient(
+    rgb(105, 8, 8),
+    rgba(139, 0, 0, 0.76),
+    rgba(149, 8, 8, 0.555)
+  );
+  color: white;
+  box-shadow: 1px 2px 4px rgba(0, 0, 0, 0.5);
+}
+
+#submit-button:hover {
+  color: wheat;
+  border-bottom: 1px wheat solid;
+}
+
+.home-image {
+  width: 100%;
+  height: auto;
 }
