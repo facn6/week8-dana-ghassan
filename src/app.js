@@ -2,6 +2,7 @@ const path = require("path");
 const express = require("express");
 const exphbs = require("express-handlebars");
 const postData = require("../src/queries/postData.js");
+const contentData = require("../src/queries/getData.js");
 
 var bodyParser = require("body-parser");
 var hbs = require("hbs");
@@ -34,8 +35,17 @@ app.get("/contact", (req, res) => {
   res.render("contact", {});
 });
 
-app.get("/content", (req, res) => {
-  res.render("content", {});
+app.get("/content", (req, response) => {
+  var data = contentData.getData((err, res) => {
+    if (err) {
+      return console.log(err);
+    }
+    let output = JSON.stringify(res);
+    let dataContent = JSON.parse(output)[0];
+    let dataTableContent = JSON.parse(output);
+
+    response.render("content", { dataContent, dataTableContent });
+  });
 });
 
 app.post("/content", urlencodedParser, (req, res) => {
@@ -54,8 +64,7 @@ app.post("/content", urlencodedParser, (req, res) => {
     req.body.phone_number,
     (err, res) => {}
   );
-  // console.log(response);
-  // res.end(response);
+  res.redirect("/content");
 });
 
 module.exports = app;
