@@ -75,3 +75,16 @@ header a:hover {
   width: 100%;
   height: auto;
 }
+
+table {
+  width: 100%;
+}
+
+table, th, td {
+  border: 1px solid lightgrey;
+  border-collapse: collapse;
+}
+
+th, td {
+  padding: 2px 4px;
+}

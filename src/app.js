@@ -1,8 +1,7 @@
 const path = require("path");
 const express = require("express");
 const exphbs = require("express-handlebars");
-var hbs = require("hbs");
-require("handlebars-form-helpers").register(hbs.handlebars);
+const contentData = require('../src/queries/getData.js');
 
 var favicon = require("serve-favicon");
 
@@ -32,8 +31,19 @@ app.get("/contact", (req, res) => {
   res.render("contact", {});
 });
 
-app.get("/content", (req, res) => {
-  res.render("content", {});
+app.get("/content", (req, response) => {
+  var data =  contentData.getData((err,res)=>
+  { 
+    if(err){
+      return console.log(err);    
+    }
+    let output = JSON.stringify(res);
+    let dataContent = JSON.parse(output)[0];   
+    let dataTableContent = JSON.parse(output);
+
+    response.render("content", {dataContent, dataTableContent});
+
+  }); 
 });
 
 module.exports = app;
