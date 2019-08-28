@@ -48,14 +48,13 @@ app.get("/content", (req, response) => {
   });
 });
 
-app.post("/content", urlencodedParser, (req, res) => {
-  // response = {
-  //   first_name: req.body.first_name,
-  //   last_name: req.body.last_name,
-  //   interest: req.body.interests,
-  //   email: req.body.email,
-  //   phone_number: req.body.phone_number
-  // };
+app.post("/content",urlencodedParser, (req, res) => {
+  
+  req.check('email','invalid email address').isEmail();
+  var errors = req.validationErrors();
+  if(errors){
+    req.session.errors =errors;
+  }
   postData(
     req.body.first_name,
     req.body.last_name,
