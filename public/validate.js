@@ -3,8 +3,6 @@ var error = document.querySelector(".error");
 
 
 form.addEventListener("click", function(event) {
-    console.log("we r in index.js");
-    
     if (email.validity.typeMismatch) {
         error.innerText = "Please enter a valid email address";
         event.preventDefault();
