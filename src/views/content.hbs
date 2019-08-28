@@ -2,4 +2,22 @@
     {{>header}}
 </section>
 
-<h4 class="title">Content</h4>
+<h4 class="title">Content Details</h4>
+<table>
+<thead>
+  <tr>
+    {{#each dataContent}}
+      <th>{{@key}}</th>
+    {{/each}}
+  </tr>
+</thead>
+<tbody>
+  {{#each dataTableContent}}
+    <tr>
+    	{{#each this}}
+        <td>{{this}}</td>
+      {{/each}}
+    </tr>
+  {{/each}}
+</tbody>
+</table>
