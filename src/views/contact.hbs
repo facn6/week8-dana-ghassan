@@ -4,12 +4,12 @@
 
 <h4 class="title">Fill your details</h4>
 <section>
-    <form class="contact" action="content.hbs" method="POST">
-        <input type="text" placeholder="First Name" id="first-name">
-        <input type="text" placeholder="Last Name" id="last-name">
-        <input type="text" placeholder="Interest" id="interest">
-        <input type="text" placeholder="Email" id="email">
-        <input type="text" placeholder="Phone Number" id="phone-number">
+    <form class="contact" method="POST" action="/content">
+        <input type="text" placeholder="First Name" id="first-name" name="first_name">
+        <input type="text" placeholder="Last Name" id="last-name" name="last_name">
+        <input type="text" placeholder="Interest" id="interest" name="interests">
+        <input type="text" placeholder="Email" id="email" name="email">
+        <input type="text" placeholder="Phone Number" id="phone-number" name="phone_number">
         <button id="submit-button">Submit</button>
     </form>
 </section>
