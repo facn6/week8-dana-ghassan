@@ -5,11 +5,12 @@
 <h4 class="title">Fill your details</h4>
 <section>
     <form class="contact" method="POST" action="/content">
-        <input type="text" placeholder="First Name" id="first-name" name="first_name">
-        <input type="text" placeholder="Last Name" id="last-name" name="last_name">
-        <input type="text" placeholder="Interest" id="interest" name="interests">
-        <input type="text" placeholder="Email" id="email" name="email">
-        <input type="text" placeholder="Phone Number" id="phone-number" name="phone_number">
+        <input type="text" placeholder="First Name" id="first-name" name="first_name" required>
+        <input type="text" placeholder="Last Name" id="last-name" name="last_name" required>
+        <input type="text" placeholder="Interest" id="interest" name="interests" required>
+        <input type="email" placeholder="Email" id="email" name="email" required>
+        <input type="text" placeholder="Phone Number" id="phone-number" name="phone_number" required>
+        <p class="error" aria-live="polite"></p>
         <button id="submit-button">Submit</button>
     </form>
 </section>
