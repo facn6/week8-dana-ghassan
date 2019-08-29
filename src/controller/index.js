@@ -3,8 +3,8 @@ const path = require("path");
 const express = require("express");
 var app = express();
 
-const postData = require("../../src/queries/postData.js");
-const contentData = require("../../src/queries/getData.js");
+const postData = require("../../src/models/queries/postData.js");
+const contentData = require("../../src/models/queries/getData.js");
 var bodyParser = require("body-parser");
 
 var urlencodedParser = bodyParser.urlencoded({ extended: false });
@@ -19,20 +19,19 @@ app.get("/", (req, res) => {
     res.render("contact", {});
   });
   
-  app.get("/content", (req, response) => {
-    contentData.getData((err, res) => {
-      if (err) {
-        return console.log(err);
-      }
-      let output = JSON.stringify(res);
-      let dataContent = JSON.parse(output)[0];
-      let dataTableContent = JSON.parse(output);
-  
-      response.render("content", { dataContent, dataTableContent });
-    });
+  app.get("/content", (req, response , next) => {
+    contentData.getData()
+    .then(resultData =>
+      {
+        let output = JSON.stringify(resultData.rows);
+        let dataContent = JSON.parse(output)[0];
+        let dataTableContent = JSON.parse(output);
+        response.render("content", { dataContent, dataTableContent })
+  })
+  .catch(err => next(err));
   });
   
-  app.post("/content",urlencodedParser, (req, res) => {
+  app.post("/content",urlencodedParser, (req, res, next) => {
     
     postData(
       req.body.first_name,
@@ -40,9 +39,9 @@ app.get("/", (req, res) => {
       req.body.interests,
       req.body.email,
       req.body.phone_number,
-      (err, res) => {}
-    );
-    res.redirect("/content");
+    ).then(res.redirect("/content"))
+    .catch(err => next(err));
+
   });
 
 module.exports = app;
