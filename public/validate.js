@@ -1,4 +1,4 @@
-var form = document.getElementsByTagName("form")[0];
+let form = document.getElementsByTagName("form")[0];
 let email = document.getElementById("email");
 let error = document.querySelector(".error");
 let phone_number = document.getElementById("phone_number");
